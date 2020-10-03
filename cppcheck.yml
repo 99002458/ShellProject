@@ -1,9 +1,5 @@
 name: cppcheck-action
- on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push]
 
 jobs:
   build:
@@ -15,4 +11,4 @@ jobs:
       - name: Install cppcheck
         run: sudo apt-get -y install cppcheck
       - name: Cppcheck code
-        run: cppcheck account_test.cc
+        run: cppcheck *.cc
